@@ -1,6 +1,7 @@
 
 import { Globe } from "lucide-react";
 import { Card } from "./ui/card";
+import { GlobeDemo } from "./GitGlobe" ;
 
 export const Contact = () => {
   return (
@@ -22,7 +23,8 @@ export const Contact = () => {
             </a>
           </div>
           <div className="relative">
-            <Globe className="w-24 h-24 text-primary animate-pulse" />
+            <GlobeDemo  />
+            
             <div className="absolute inset-0 blur-3xl bg-primary/20 -z-10" />
           </div>
         </div>
