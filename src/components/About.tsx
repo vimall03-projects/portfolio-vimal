@@ -1,5 +1,6 @@
 
 import { Card } from "./ui/card";
+import { Badge } from "./ui/badge";
 
 export const About = () => {
   const languages = ["English", "Hindi", "Telugu", "Kannada", "Tamil"];
@@ -19,12 +20,10 @@ export const About = () => {
               <h3 className="text-xl font-space-grotesk text-primary mb-2">Languages I Speak</h3>
               <div className="flex flex-wrap gap-2">
                 {languages.map((language) => (
-                  <span 
-                    key={language}
-                    className="px-3 py-1 rounded-full bg-accent/10 text-accent-foreground text-sm"
-                  >
+                     <Badge key={language} variant="outline" className="bg-accent/10 border-accent/20">
                     {language}
-                  </span>
+                  </Badge>
+
                 ))}
               </div>
             </div>
@@ -33,12 +32,9 @@ export const About = () => {
               <h3 className="text-xl font-space-grotesk text-primary mb-2">What I Love</h3>
               <div className="flex flex-wrap gap-2">
                 {hobbies.map((hobby) => (
-                  <span 
-                    key={hobby}
-                    className="px-3 py-1 rounded-full bg-accent/10 text-accent-foreground text-sm"
-                  >
-                    {hobby}
-                  </span>
+                  <Badge key={language} variant="outline" className="bg-accent/10 border-accent/20">
+                    {language}
+                  </Badge>
                 ))}
               </div>
             </div>
