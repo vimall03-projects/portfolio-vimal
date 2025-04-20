@@ -32,8 +32,8 @@ export const About = () => {
               <h3 className="text-xl font-space-grotesk text-primary mb-2">What I Love</h3>
               <div className="flex flex-wrap gap-2">
                 {hobbies.map((hobby) => (
-                  <Badge key={language} variant="outline" className="bg-accent/10 border-accent/20">
-                    {language}
+                  <Badge key={hobby} variant="outline" className="bg-accent/10 border-accent/20">
+                    {hobby}
                   </Badge>
                 ))}
               </div>
