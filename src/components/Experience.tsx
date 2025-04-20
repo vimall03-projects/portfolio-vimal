@@ -23,6 +23,17 @@ const experiences = [
       "Implemented automated workflows for Jira ticket creation using AWS",
       "Optimized AWS alert setups reducing setup time by 95%"
     ]
+  },
+  {
+    title: "Open Source Contributor",
+    company: "GirlScript Summer Of Code",
+    period: "May 2024 – Aug 2024",
+    points: [
+      "Featured among top 200 contributors in June",
+      "Led development on over 10 full-stack projects",
+      "Merged 20+ PRs improving code quality and fixing bugs",
+      "Contributed to multiple open source repositories"
+    ]
   }
 ];
 
@@ -32,7 +43,10 @@ export const Experience = () => {
       <h2 className="heading text-3xl md:text-4xl mb-12 gradient-text">Experience</h2>
       <div className="space-y-8">
         {experiences.map((exp, idx) => (
-          <Card key={idx} className="p-6 card-hover backdrop-blur bg-secondary/50">
+          <Card 
+            key={idx} 
+            className="p-6 card-hover backdrop-blur bg-secondary/50 border-border/50"
+          >
             <div className="space-y-4">
               <div className="flex justify-between items-start flex-wrap gap-2">
                 <div>
