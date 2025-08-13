@@ -6,6 +6,7 @@ import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
 import { Contact } from "@/components/Contact";
 import StarField from "@/components/StarField";
+import NowPlaying from "@/components/NowPlaying";
 
 const Index = () => {
   return (
@@ -13,6 +14,12 @@ const Index = () => {
       {/* Adjusted density and speed */}
       <StarField density={0.0003} speed={0.08} parallax={0} className="opacity-45" />
       <main className="relative z-10">
+        <NowPlaying
+          tracks={[
+            { src: "/audio/loves-around-zayn.mp3", title: "When Love's Around (feat. Syd)", artist: "ZAYN" },
+            { src: "/audio/connexion-zayn.mp3", title: "Connexion", artist: "ZAYN" },
+          ]}
+        />
         <HeroSection />
         <About />
         <Experience />
