@@ -7,16 +7,16 @@ const experiences = [
     company: "Synthetic Bee",
     period: "Nov 2024 – Present",
     points: [
-      "Led the end-to-end design, development, and deployment of backend architecture for advanced document analysis",
-      "Collaborated with founding team to define business needs and develop AI-driven solutions",
-      "Managed data handling and vector search with Milvus vector database",
-      "Implemented monitoring pipelines for model reliability"
+      "Leading end-to-end design, development, and deployment of backend architecture for advanced document analysis",
+      "Collaborating with the founding team to define business needs and develop AI-driven solutions",
+      "Managing data handling and vector search with Milvus vector database",
+      "Implementing monitoring pipelines for model reliability"
     ]
   },
   {
     title: "Junior Software Development Engineer",
     company: "App Mastery",
-    period: "Aug 2024 – Dec 2024",
+    period: "Aug 2024 – Present",
     points: [
       "Spearheaded RAG system development using LangChain and OpenAI",
       "Enhanced LLM factual accuracy by 30-50% through testing",
@@ -45,8 +45,16 @@ export const Experience = () => {
         {experiences.map((exp, idx) => (
           <Card 
             key={idx} 
-            className="p-6 card-hover backdrop-blur bg-secondary/50 border-border/50"
+            className="group p-6 card-hover backdrop-blur bg-secondary/50 border border-primary/20 relative overflow-hidden hover:bg-secondary/70 hover:border-primary/30"
+            onMouseMove={(e: any) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              e.currentTarget.style.setProperty("--x", `${x}px`);
+              e.currentTarget.style.setProperty("--y", `${y}px`);
+            }}
           >
+            <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(700px_150px_at_var(--x)_var(--y),rgba(155,135,245,0.16),transparent_50%)]" />
             <div className="space-y-4">
               <div className="flex justify-between items-start flex-wrap gap-2">
                 <div>

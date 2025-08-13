@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "./ui/card";
 
 const skillCategories = [
@@ -20,7 +19,7 @@ const skillCategories = [
   },
   {
     title: "AI & ML",
-    skills: ["LangChain", "CrewAI", "PyTorch", "TensorFlow", "Scikit-learn"]
+    skills: ["LangChain", "LangGraph", "LlamaIndex", "CrewAI", "PyTorch", "TensorFlow", "Scikit-learn"]
   },
   {
     title: "Others",
@@ -31,13 +30,21 @@ const skillCategories = [
 export const Skills = () => {
   return (
     <section className="py-20 container" id="skills">
-      <h2 className="heading text-3xl md:text-4xl mb-12 gradient-text">Skills</h2>
+      <h2 className="heading text-3xl md:text-4xl mb-12 gradient-text">Capabilities</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillCategories.map((category, idx) => (
           <Card 
             key={idx} 
-            className="card-hover backdrop-blur bg-secondary/50 border-border/50"
+            className="group card-hover backdrop-blur bg-secondary/50 border border-primary/20 relative overflow-hidden hover:bg-secondary/70 hover:border-primary/30"
+            onMouseMove={(e: any) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              e.currentTarget.style.setProperty("--x", `${x}px`);
+              e.currentTarget.style.setProperty("--y", `${y}px`);
+            }}
           >
+            <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(600px_120px_at_var(--x)_var(--y),rgba(155,135,245,0.16),transparent_50%)]" />
             <CardContent className="p-6">
               <h3 className="text-lg font-space-grotesk mb-4">{category.title}</h3>
               <div className="flex flex-wrap gap-2">

@@ -56,13 +56,21 @@ const projects = [
 export const Projects = () => {
   return (
     <section className="py-20 container" id="projects">
-      <h2 className="heading text-3xl md:text-4xl mb-12 gradient-text">Projects</h2>
-      <div className="grid gap-8">
+      <h2 className="heading text-3xl md:text-4xl mb-12 gradient-text">Selected Work</h2>
+      <div className="grid md:grid-cols-2 gap-8">
         {projects.map((project, idx) => (
-          <Card 
-            key={idx} 
-            className="transform transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(155,135,245,0.25)] backdrop-blur bg-secondary/70 border-border/50 hover:bg-secondary/90"
+          <Card
+            key={idx}
+            className="group relative overflow-hidden backdrop-blur bg-secondary/50 border border-primary/20 transition-all duration-300 hover:bg-secondary/70 hover:border-primary/30"
+            onMouseMove={(e: any) => {
+              const rect = e.currentTarget.getBoundingClientRect();
+              const x = e.clientX - rect.left;
+              const y = e.clientY - rect.top;
+              e.currentTarget.style.setProperty("--x", `${x}px`);
+              e.currentTarget.style.setProperty("--y", `${y}px`);
+            }}
           >
+            <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(800px_200px_at_var(--x)_var(--y),rgba(155,135,245,0.18),transparent_50%)]" />
             <CardHeader>
               <div className="flex justify-between items-start">
                 <CardTitle className="text-xl font-space-grotesk">{project.title}</CardTitle>
